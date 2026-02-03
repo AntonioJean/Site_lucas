@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lucas Lima - Personal Trainer Premium</title>
+
+  <link rel="stylesheet" href="./css/output.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap"
+    rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#3b82f6', // Blue 500
+            'primary-dark': '#2563eb', // Blue 600
+            'primary-glow': '#60a5fa', // Blue 400
+            dark: '#0a0a0a',
+            card: '#121212'
+          },
+          fontFamily: {
+            sans: ['Montserrat', 'sans-serif'],
+          },
+          backgroundImage: {
+            'hero-pattern': "url('./assets/imghero-gym.jpg')",
+          }
+        }
+      }
+    }
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const slider = document.getElementById('reviewsSlider');
+      const next = document.getElementById('btnNext');
+      const prev = document.getElementById('btnPrev');
+
+      if (!slider) return;
+
+      const scrollAmount = () => {
+        const card = slider.querySelector('.review-card');
+        return card.offsetWidth + 24; // gap-6
+      };
+
+      next.addEventListener('click', () => {
+        slider.scrollLeft += scrollAmount();
+      });
+
+      prev.addEventListener('click', () => {
+        slider.scrollLeft -= scrollAmount();
+      });
+    });
+  </script>
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      background-color: #0a0a0a;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    html,
+    body {
+      overflow-x: hidden;
+    }
+
+    /* Inputs estilo iOS */
+    input[type="date"],
+    input[type="time"] {
+      -webkit-appearance: none;
+      appearance: none;
+      color-scheme: dark;
+    }
+
+    /* Efeito de brilho atrás da foto */
+    .personal-glow {
+      box-shadow: 0 0 80px -20px rgba(59, 130, 246, 0.4);
+    }
+  </style>
+
+  <style>
+    html,
+    body {
+      overflow-x: hidden;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+
+</head>
+
+<body class="text-white selection:bg-primary selection:text-black relative">
+
+  <div
+    class="fixed top-0 right-0 w-[300px] h-[300px] md:w-[800px] md:h-[800px] bg-primary/10 rounded-full blur-[120px] pointer-events-none -z-10">
+  </div>
+  <div
+    class="fixed bottom-0 left-0 w-[250px] h-[250px] md:w-[600px] md:h-[600px] bg-blue-900/20 rounded-full blur-[100px] pointer-events-none -z-10">
+  </div>
+
+  <nav class="fixed top-0 w-full z-50 bg-dark/90 backdrop-blur-md border-b border-white/5 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#" class="text-xl md:text-2xl font-black tracking-tighter z-50 relative">
+        LUCAS<span class="text-primary"> LIMA</span>
+      </a>
+
+      <ul class="hidden md:flex gap-8 text-xs md:text-sm font-bold uppercase tracking-widest text-neutral-400">
+        <li><a href="#home" class="hover:text-primary transition-colors">Home</a></li>
+        <li><a href="#sobre" class="hover:text-primary transition-colors">Método</a></li>
+        <li><a href="#planos" class="hover:text-primary transition-colors text-white">Planos</a></li>
+        <li><a href="#resultados" class="hover:text-primary transition-colors text-white">Resultados</a></li>
+        <li><a href="#agenda" class="hover:text-primary transition-colors">Contato</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="home" class="relative min-h-[90vh] flex items-center pt-28 pb-10 px-6 overflow-hidden">
+    <div class="absolute inset-0 bg-hero-pattern bg-cover bg-center bg-no-repeat opacity-20 -z-20"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-dark via-dark/95 to-dark/80 -z-10"></div>
+
+    <div class="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+      <div class="reveal flex flex-col items-start z-10 order-2 md:order-1">
+        <div class="inline-block px-4 py-1.5 mb-6 border border-primary/30 rounded-full bg-primary/10 backdrop-blur-sm">
+          <span class="text-primary text-[10px] md:text-xs font-bold uppercase tracking-widest flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+            Consultoria Premium
+          </span>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.1] mb-6 tracking-tight text-white">
+          TRANSFORME SEU CORPO <br>
+          <span class="bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">
+            COM ESTRATÉGIA
+          </span>
+        </h1>
+
+        <div class="mb-8 border-l-4 border-primary pl-6 py-2">
+          <h2 class="text-xl font-bold text-white mb-2">Olá, sou <span class="text-primary">Lucas Lima</span>.</h2>
+          <p class="text-neutral-300 text-sm md:text-base leading-relaxed font-light">
+            Especialista em biomecânica e fisiologia do exercício com mais de 10 anos de experiência. Minha missão é
+            construir um estilo de vida sustentável, funcional e estético para você.
+            <br><br>
+            Seja presencialmente ou online, eu serei o parceiro estratégico da sua evolução física.
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+          <button id="btnHero"
+            class="px-8 py-5 bg-gradient-to-r from-primary to-primary-dark font-bold text-white rounded-xl shadow-[0_0_30px_rgba(59,130,246,0.4)] transition-all duration-300 hover:scale-105 hover:shadow-blue-500/60 uppercase tracking-wider text-sm">
+            Começar Agora
+          </button>
+          <a href="#sobre"
+            class="px-8 py-5 border border-white/20 hover:border-primary hover:text-primary font-bold text-white rounded-xl transition-all duration-300 uppercase tracking-wider text-sm text-center">
+            Conhecer Método
+          </a>
+        </div>
+      </div>
+
+      <div class="reveal relative order-1 md:order-2 flex justify-center md:justify-end">
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-primary/20 rounded-full blur-3xl -z-10">
+        </div>
+        <div
+          class="relative w-full max-w-md aspect-[3/4] md:aspect-[4/5] rounded-3xl overflow-hidden border border-white/10 personal-glow group">
+          <img src="./assets/img/img.jpeg" alt="Lucas Lima Personal Trainer"
+            class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-dark to-transparent"></div>
+          <div
+            class="absolute bottom-6 left-6 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-lg">
+            <p class="text-white font-bold text-sm">CREF: 007303-G/PI</p>
+            <p class="text-primary text-xs">Personal Trainer Certificado</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre" class="py-20 px-6 bg-neutral-900/30 border-y border-white/5">
+    <div class="max-w-7xl mx-auto text-center reveal">
+      <h2 class="text-primary text-xs tracking-[0.2em] uppercase mb-4 font-bold">Diferenciais</h2>
+      <h3 class="text-2xl md:text-4xl font-black text-white mb-10">POR QUE ESCOLHER ESTE ACOMPANHAMENTO?</h3>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+        <div class="p-6 rounded-2xl bg-dark border border-white/5 hover:border-primary/40 transition-colors">
+          <div class="text-3xl mb-4 text-primary">🧠</div>
+          <h4 class="font-bold text-white mb-2">Inteligência de Treino</h4>
+          <p class="text-sm text-neutral-400">Periodização baseada em ciência. Cada série tem um porquê.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-dark border border-white/5 hover:border-primary/40 transition-colors">
+          <div class="text-3xl mb-4 text-primary">🤝</div>
+          <h4 class="font-bold text-white mb-2">Proximidade Real</h4>
+          <p class="text-sm text-neutral-400">Suporte humanizado. Eu entendo sua rotina e adapto o plano.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-dark border border-white/5 hover:border-primary/40 transition-colors">
+          <div class="text-3xl mb-4 text-primary">🚀</div>
+          <h4 class="font-bold text-white mb-2">Foco em Resultado</h4>
+          <p class="text-sm text-neutral-400">Metas claras e monitoramento constante para sair do platô.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="planos" class="relative py-20 md:py-32 px-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-20 reveal">
+        <h2 class="text-primary text-xs tracking-[0.2em] uppercase mb-4 font-bold">Investimento</h2>
+        <h3 class="text-3xl md:text-5xl font-black text-white">ESCOLHA SEU PLANO</h3>
+      </div>
+
+      <div id="online" class="relative mb-16 flex items-center justify-center reveal pt-10">
+        <div class="h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent w-full max-w-md absolute">
+        </div>
+        <div
+          class="relative bg-dark px-8 py-3 rounded-full border border-primary/30 shadow-[0_0_20px_rgba(59,130,246,0.2)]">
+          <span class="text-xl md:text-2xl font-black text-white uppercase tracking-wider flex items-center gap-3">
+            <span class="text-primary">🌐</span> Consultoria Online
+          </span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-32 relative z-10">
+        <div
+          class="reveal flex flex-col p-8 rounded-3xl bg-neutral-900/60 backdrop-blur-md border border-white/5 hover:border-primary/40 transition-all hover:-translate-y-2">
+          <div class="mb-4">
+            <span class="text-neutral-400 font-bold tracking-wider text-sm uppercase">Mensal</span>
+            <div class="flex items-baseline mt-2">
+              <span class="text-2xl font-bold text-neutral-500">R$</span>
+              <span class="text-5xl font-black text-white tracking-tighter">300</span>
+            </div>
+          </div>
+          <ul class="space-y-3 mb-8 flex-grow text-sm text-neutral-300">
+            <li class="flex items-start"><span class="text-primary mr-2">✔️</span> Acompanhamento 100% personalizado
+            </li>
+            <li class="flex items-start"><span class="text-primary mr-2">✔️</span> Suporte via WhatsApp</li>
+            <li class="flex items-start"><span class="text-primary mr-2">✔️</span> Avaliação física avançada</li>
+          </ul>
+          <button
+            class="btn-online-mensal w-full py-4 rounded-xl border border-neutral-700 font-bold uppercase text-xs tracking-wider hover:bg-white hover:text-black transition-all">
+            Selecionar Mensal
+          </button>
+        </div>
+
+        <div
+          class="reveal relative flex flex-col p-8 rounded-3xl bg-blue-900/10 backdrop-blur-md border border-primary/40 transition-all md:-translate-y-4 shadow-[0_0_40px_rgba(59,130,246,0.15)]">
+          <div
+            class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-lg">
+            Mais Popular
+          </div>
+          <div class="mb-4 mt-2">
+            <span class="text-primary-glow font-bold tracking-wider text-sm uppercase">Trimestral</span>
+            <div class="flex items-baseline mt-2">
+              <span class="text-2xl font-bold text-neutral-500">R$</span>
+              <span class="text-5xl font-black text-white tracking-tighter">840</span>
+              <span class="text-sm text-neutral-400 ml-2">Total</span>
+            </div>
+            <p class="text-xs text-primary mt-1 font-bold">De R$ 900 por R$ 840</p>
+          </div>
+          <ul class="space-y-3 mb-8 flex-grow text-sm text-white">
+            <li class="flex items-start"><span class="text-primary mr-2">✔️</span> Tudo do plano mensal</li>
+            <li class="flex items-start"><span class="text-primary mr-2">✔️</span> Reavaliação a cada 30 dias</li>
+            <li class="flex items-start"><span class="text-primary mr-2">✔️</span> Análise comparativa de evolução</li>
+          </ul>
+          <button
+            class="btn-online-tri w-full py-4 rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 font-bold uppercase text-xs tracking-wider hover:scale-[1.02] shadow-lg transition-all">
+            Quero Evoluir
+          </button>
+        </div>
+
+        <div
+          class="reveal flex flex-col p-8 rounded-3xl bg-neutral-900/60 backdrop-blur-md border border-white/5 hover:border-primary/40 transition-all hover:-translate-y-2">
+          <div class="mb-4">
+            <span class="text-neutral-400 font-bold tracking-wider text-sm uppercase">Semestral</span>
+            <div class="flex items-baseline mt-2">
+              <span class="text-2xl font-bold text-neutral-500">R$</span>
+              <span class="text-5xl font-black text-white tracking-tighter">1.620</span>
+              <span class="text-sm text-neutral-400 ml-2">Total</span>
+            </div>
+            <p class="text-xs text-green-400 mt-1 font-bold">Economize R$ 180</p>
+          </div>
+          <ul class="space-y-3 mb-8 flex-grow text-sm text-neutral-300">
+            <li class="flex items-start"><span class="text-primary mr-2">✔️</span> Prioridade no atendimento</li>
+            <li class="flex items-start"><span class="text-primary mr-2">✔️</span> 2 videochamadas mensais</li>
+            <li class="flex items-start"><span class="text-primary mr-2">✔️</span> Visão de longo prazo</li>
+          </ul>
+          <button
+            class="btn-online-semi w-full py-4 rounded-xl border border-neutral-700 font-bold uppercase text-xs tracking-wider hover:bg-white hover:text-black transition-all">
+            Focar no Longo Prazo
+          </button>
+        </div>
+      </div>
+
+      <div id="presencial" class="relative mb-16 flex items-center justify-center reveal">
+        <div class="h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent w-full max-w-md absolute">
+        </div>
+        <div
+          class="relative bg-dark px-8 py-3 rounded-full border border-primary/30 shadow-[0_0_20px_rgba(59,130,246,0.2)]">
+          <span class="text-xl md:text-2xl font-black text-white uppercase tracking-wider flex items-center gap-3">
+            <span class="text-primary">💪</span> Presencial
+          </span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start relative z-10">
+        <div
+          class="reveal relative flex flex-col p-6 md:p-8 rounded-3xl bg-neutral-900/60 backdrop-blur-md border border-white/10 hover:border-primary/40 transition-all duration-300 hover:-translate-y-2 shadow-2xl">
+          <div class="mb-2 text-center">
+            <h4 class="text-white font-bold text-xl uppercase tracking-wider">Personalizado</h4>
+            <span class="text-primary text-xs font-bold uppercase tracking-widest">Individual ou Pequenos Grupos</span>
+            <div class="flex items-baseline justify-center mt-4">
+              <span class="text-2xl font-bold text-neutral-400">R$</span>
+              <span class="text-5xl font-black text-white tracking-tighter">700</span>
+              <span class="text-neutral-500 ml-2 text-sm">/mês</span>
+            </div>
+            <p class="text-[10px] text-neutral-500 mt-2 font-medium uppercase tracking-widest">Valor Base (Mensal)</p>
+          </div>
+          <div class="bg-black/40 rounded-xl p-4 md:p-5 mb-6 border border-white/5 backdrop-blur-sm mt-6">
+            <p
+              class="text-[10px] md:text-xs font-bold text-primary uppercase mb-3 tracking-wider text-center border-b border-white/5 pb-2">
+              Planos com Desconto</p>
+            <div class="space-y-3 text-xs md:text-sm">
+              <div class="flex justify-between items-center group">
+                <div><span class="text-neutral-300 font-bold">Bimestral (10%)</span><br><span
+                    class="text-[10px] text-neutral-500">Total: R$ 1.260</span></div>
+                <span class="font-bold text-white">R$ 630/mês</span>
+              </div>
+              <div class="flex justify-between items-center group">
+                <div><span class="text-neutral-300 font-bold">Trimestral (15%)</span><br><span
+                    class="text-[10px] text-neutral-500">Total: R$ 1.785</span></div>
+                <span class="font-bold text-white">R$ 595/mês</span>
+              </div>
+              <div class="flex justify-between items-center group">
+                <div><span class="text-neutral-300 font-bold">Semestral (20%)</span><br><span
+                    class="text-[10px] text-neutral-500">Total: R$ 3.360</span></div>
+                <span class="font-bold text-white">R$ 560/mês</span>
+              </div>
+              <div
+                class="flex justify-between items-center bg-blue-900/20 -mx-2 px-2 py-2 rounded border border-blue-500/20">
+                <div><span class="text-white font-black uppercase">Anual (25%)</span><br><span
+                    class="text-[10px] text-blue-200">Total: R$ 6.300</span></div>
+                <span class="font-black text-primary text-base">R$ 525/mês</span>
+              </div>
+            </div>
+          </div>
+          <button
+            class="btn-presencial-pers w-full py-4 rounded-xl border border-neutral-600 font-bold uppercase text-xs tracking-wider hover:bg-white hover:text-black hover:border-white transition-all">
+            Verificar Horários
+          </button>
+        </div>
+
+        <div
+          class="reveal relative flex flex-col p-6 md:p-8 rounded-3xl bg-gradient-to-b from-neutral-900 to-black border border-primary/50 transition-all duration-300 md:-translate-y-4 shadow-[0_0_60px_-15px_rgba(59,130,246,0.15)]">
+          <div
+            class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg">
+            Melhor Custo-Benefício
+          </div>
+          <div class="mb-2 text-center mt-3">
+            <h4 class="text-white font-bold text-xl uppercase tracking-wider">3 Dias / Semana</h4>
+            <span class="text-blue-300 text-xs font-bold uppercase tracking-widest">Frequência Ideal</span>
+            <div class="flex items-baseline justify-center mt-4">
+              <span class="text-2xl font-bold text-neutral-400">R$</span>
+              <span class="text-5xl font-black text-white tracking-tighter">600</span>
+              <span class="text-neutral-500 ml-2 text-sm">/mês</span>
+            </div>
+            <p class="text-[10px] text-neutral-500 mt-2 font-medium uppercase tracking-widest">Valor Base (Mensal)</p>
+          </div>
+          <div class="bg-black/60 rounded-xl p-4 md:p-5 mb-6 border border-white/10 mt-6 backdrop-blur-sm">
+            <p
+              class="text-[10px] md:text-xs font-bold text-primary uppercase mb-3 tracking-wider text-center border-b border-white/5 pb-2">
+              Planos com Desconto</p>
+            <div class="space-y-3 text-xs md:text-sm">
+              <div class="flex justify-between items-center group">
+                <div><span class="text-neutral-300 font-bold">Bimestral (10%)</span><br><span
+                    class="text-[10px] text-neutral-500">Total: R$ 1.080</span></div>
+                <span class="font-bold text-white">R$ 540/mês</span>
+              </div>
+              <div class="flex justify-between items-center group">
+                <div><span class="text-neutral-300 font-bold">Trimestral (15%)</span><br><span
+                    class="text-[10px] text-neutral-500">Total: R$ 1.530</span></div>
+                <span class="font-bold text-white">R$ 510/mês</span>
+              </div>
+              <div class="flex justify-between items-center group">
+                <div><span class="text-neutral-300 font-bold">Semestral (20%)</span><br><span
+                    class="text-[10px] text-neutral-500">Total: R$ 2.880</span></div>
+                <span class="font-bold text-white">R$ 480/mês</span>
+              </div>
+              <div
+                class="flex justify-between items-center bg-blue-600/20 -mx-2 px-2 py-2 rounded border border-blue-500/40">
+                <div><span class="text-white font-black uppercase">Anual (25%)</span><br><span
+                    class="text-[10px] text-blue-200">Total: R$ 5.400</span></div>
+                <span class="font-black text-primary text-lg">R$ 450/mês</span>
+              </div>
+            </div>
+          </div>
+          <button
+            class="btn-presencial-3x w-full py-4 rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 font-bold uppercase text-xs tracking-wider shadow-lg hover:shadow-blue-500/40 hover:scale-[1.02] transition-all">
+            Garantir Vaga 3x
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="avaliacoes" class="py-20 bg-neutral-950 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- HEADER -->
+      <div class="text-center mb-14">
+        <span class="text-primary text-xs tracking-[0.25em] uppercase font-semibold">
+          Depoimentos Reais
+        </span>
+        <h2 class="mt-4 text-3xl sm:text-4xl md:text-5xl font-black text-white">
+          RESULTADOS QUE FALAM POR SI
+        </h2>
+        <p class="mt-4 text-neutral-400 text-sm max-w-xl mx-auto">
+          Atendimento próximo, acompanhamento real e evolução constante.
+        </p>
+      </div>
+
+      <!-- CONTROLES -->
+      <div class="hidden md:flex justify-end gap-3 mb-6">
+        <button id="btnPrev"
+          class="w-11 h-11 rounded-full border border-white/10 text-white hover:border-primary hover:text-primary transition flex items-center justify-center">
+          ‹
+        </button>
+        <button id="btnNext"
+          class="w-11 h-11 rounded-full border border-white/10 text-white hover:border-primary hover:text-primary transition flex items-center justify-center">
+          ›
+        </button>
+      </div>
+
+      <!-- SLIDER -->
+      <div id="reviewsSlider"
+        class="flex gap-6 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory pb-4 touch-pan-x">
+
+        <!-- CARD 1 -->
+        <article
+          class="review-card snap-start shrink-0 w-[85vw] sm:w-[70vw] md:w-[420px] bg-neutral-900 p-8 rounded-2xl border border-white/5 shadow-xl">
+          <div class="text-primary mb-4">★★★★★</div>
+          <p class="text-neutral-300 italic text-sm leading-relaxed mb-6">
+            "Meu amigo, eu sei que é pouco tempo, mas a diferença é notória. Um treino individualizado faz total
+            diferença."
+          </p>
+          <strong class="block text-white text-sm">Lanna Monteiro</strong>
+          <span class="text-[10px] text-neutral-500 uppercase">Presencial</span>
+        </article>
+
+        <!-- CARD 2 -->
+        <article
+          class="review-card snap-start shrink-0 w-[85vw] sm:w-[70vw] md:w-[420px] bg-neutral-900 p-8 rounded-2xl border border-white/5 shadow-xl">
+          <div class="text-primary mb-4">★★★★★</div>
+          <p class="text-neutral-300 italic text-sm leading-relaxed mb-6">
+            "Excelente profissional, com muito conhecimento. Explica os exercícios de forma clara e objetiva."
+          </p>
+          <strong class="block text-white text-sm">Samira Sammy</strong>
+          <span class="text-[10px] text-neutral-500 uppercase">Presencial</span>
+        </article>
+
+        <!-- CARD 3 -->
+        <article
+          class="review-card snap-start shrink-0 w-[85vw] sm:w-[70vw] md:w-[420px] bg-neutral-900 p-8 rounded-2xl border border-white/5 shadow-xl">
+          <div class="text-primary mb-4">★★★★★</div>
+          <p class="text-neutral-300 italic text-sm leading-relaxed mb-6">
+            "A consultoria online se encaixou perfeitamente na minha rotina. Suporte constante e treino seguro."
+          </p>
+          <strong class="block text-white text-sm">Jaísa Nunes</strong>
+          <span class="text-[10px] text-neutral-500 uppercase">Online</span>
+        </article>
+
+        <!-- CARD 4 -->
+        <article
+          class="review-card snap-start shrink-0 w-[85vw] sm:w-[70vw] md:w-[420px] bg-neutral-900 p-8 rounded-2xl border border-white/5 shadow-xl">
+          <div class="text-primary mb-4">★★★★★</div>
+          <p class="text-neutral-300 italic text-sm leading-relaxed mb-6">
+            "Nunca tive tanta constância nos treinos. O acompanhamento muda tudo."
+          </p>
+          <strong class="block text-white text-sm">Rafael Costa</strong>
+          <span class="text-[10px] text-neutral-500 uppercase">Presencial</span>
+        </article>
+
+        <!-- CARD 5 -->
+        <article
+          class="review-card snap-start shrink-0 w-[85vw] sm:w-[70vw] md:w-[420px] bg-neutral-900 p-8 rounded-2xl border border-white/5 shadow-xl">
+          <div class="text-primary mb-4">★★★★★</div>
+          <p class="text-neutral-300 italic text-sm leading-relaxed mb-6">
+            "Treino bem explicado, seguro e com resultado real. Recomendo demais."
+          </p>
+          <strong class="block text-white text-sm">Daniela Souza</strong>
+          <span class="text-[10px] text-neutral-500 uppercase">Online</span>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+
+
+ <section id="resultados" class="py-20 px-6 relative overflow-hidden">
+  <div
+    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-primary/5 rounded-full blur-[120px] -z-10">
+  </div>
+
+  <div class="max-w-7xl mx-auto">
+
+    <!-- HEADER -->
+    <div class="text-center mb-16 reveal">
+      <h2 class="text-primary text-xs tracking-[0.2em] uppercase mb-4 font-bold">Resultados</h2>
+      <h3 class="text-3xl md:text-4xl font-black text-white">TRANSFORMAÇÕES REAIS</h3>
+      <p class="text-neutral-400 mt-4 text-sm">
+        Cada resultado é fruto de estratégia, consistência e acompanhamento próximo.
+      </p>
+    </div>
+
+    <!-- GRID DE RESULTADOS -->
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
+
+      <!-- CARD -->
+      <div
+        class="reveal bg-dark rounded-3xl border border-white/5 hover:border-primary/40 transition-all overflow-hidden">
+
+        <!-- FOTO -->
+        <div class="relative w-full aspect-[4/5] overflow-hidden">
+          <img src="./assets/img/antes-depois-01.jpeg"
+            class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+
+          <span
+            class="absolute top-4 left-4 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase shadow-lg">
+            Antes & Depois
+          </span>
+
+          <span
+            class="absolute bottom-4 right-4 bg-black/70 text-primary text-xs font-black px-4 py-1.5 rounded-full backdrop-blur">
+            -12kg
+          </span>
+        </div>
+
+        <!-- TEXTO -->
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-3">
+            <h4 class="text-white font-bold text-base">Alexandre Moura</h4>
+            <span class="text-neutral-500 text-xs uppercase tracking-widest">
+              4 meses
+            </span>
+          </div>
+
+          <p class="text-neutral-400 text-sm leading-relaxed">
+            Queria agradecer ao meu amigo e personal pelo excelente trabalho.
+            Com estratégia e constância, consegui atingir meu máximo desempenho
+            e transformar completamente meu físico.
+          </p>
+
+          <div class="mt-4 flex gap-3 text-[10px] uppercase tracking-widest text-neutral-500">
+            <span>Emagrecimento</span>
+            <span>•</span>
+            <span>Alta Performance</span>
+            <span>•</span>
+            <span>Online</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD -->
+      <div
+        class="reveal bg-dark rounded-3xl border border-white/5 hover:border-primary/40 transition-all overflow-hidden">
+
+        <div class="relative w-full aspect-[4/5] overflow-hidden">
+          <img src="./assets/img/antes-depois-02.jpeg"
+            class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+
+          <span
+            class="absolute top-4 left-4 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase shadow-lg">
+            Antes & Depois
+          </span>
+
+          <span
+            class="absolute bottom-4 right-4 bg-black/70 text-primary text-xs font-black px-4 py-1.5 rounded-full backdrop-blur">
+            -10kg
+          </span>
+        </div>
+
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-3">
+            <h4 class="text-white font-bold text-base">Pablo Dantas</h4>
+            <span class="text-neutral-500 text-xs uppercase tracking-widest">
+              1 ano
+            </span>
+          </div>
+
+          <p class="text-neutral-400 text-sm leading-relaxed">
+            Minha evolução durante essas anos com Lucas foram
+            muitas durante esse tempo, não so física mas mental também. 
+            Treinos e motivação não faltam são 10 anos e o
+            profissionalismo não muda sempre excelente e pró-ativo e prestativo, sempre levando ao limite pra extrair o máximo!
+          </p>
+
+          <div class="mt-4 flex gap-3 text-[10px] uppercase tracking-widest text-neutral-500">
+            <span>Constância</span>
+            <span>•</span>
+            <span>Disciplina</span>
+            <span>•</span>
+            <span>Presencial</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 👉 DUPLIQUE OS CARDS AQUI -->
+
+    </div>
+
+    <p class="text-center text-[10px] text-neutral-600 mt-12 reveal">
+      * Os resultados variam conforme biotipo, disciplina e aderência ao plano.
+    </p>
+
+  </div>
+</section>
+
+
+
+
+  <section id="agenda" class="py-20 md:py-28 px-6 max-w-3xl mx-auto text-center border-t border-white/5">
+    <h2 class="reveal text-3xl md:text-5xl font-black mb-6 leading-tight">
+      PRONTO PARA EVOLUIR?
+    </h2>
+    <p class="reveal text-neutral-400 mb-10 text-lg">
+      As vagas para o horário nobre presencial são limitadas. Garanta seu espaço agora.
+    </p>
+<div class="mt-12 flex justify-center">
+  <button id="btnFinal"
+    class="group relative px-12 py-6
+           bg-gradient-to-r from-primary via-blue-500 to-primary-dark
+           text-white font-black uppercase tracking-widest text-sm md:text-base
+           rounded-2xl
+           shadow-[0_0_60px_rgba(59,130,246,0.75)]
+           hover:scale-110 hover:shadow-blue-500/90
+           transition-all duration-300
+           focus:outline-none focus:ring-4 focus:ring-primary/40">
+
+    Enviar mensagem
+
+    <!-- glow animado -->
+    <span
+      class="absolute inset-0 rounded-2xl bg-primary opacity-40 blur-xl -z-10 animate-pulse">
+    </span>
+  </button>
+</div>
+  <button id="wppFloat"
+    class="fixed z-50 bottom-6 right-6 bg-primary w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(59,130,246,0.5)] hover:scale-110 transition border-2 border-white/10 text-white">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+      <path
+        d="M17.472 14.382C17.112 14.202 15.344 13.332 15.013 13.222C14.682 13.111 14.441 13.056 14.201 13.416C13.96 13.777 13.269 14.587 13.059 14.828C12.848 15.068 12.638 15.098 12.278 14.918C11.917 14.738 10.755 14.357 9.377 13.129C8.288 12.158 7.553 10.959 7.342 10.599C7.132 10.238 7.321 10.043 7.501 9.864C7.662 9.704 7.859 9.448 8.04 9.238C8.22 9.028 8.28 8.878 8.4 8.637C8.52 8.397 8.46 8.187 8.37 8.007C8.28 7.826 7.559 6.054 7.259 5.333C6.968 4.632 6.674 4.727 6.452 4.727C6.248 4.727 6.014 4.727 5.774 4.727C5.534 4.727 5.143 4.817 4.813 5.177C4.482 5.538 3.551 6.409 3.551 8.181C3.551 9.953 4.841 11.665 5.021 11.906C5.202 12.146 7.567 15.93 11.31 17.432C14.07 18.539 14.625 18.333 15.136 18.273C15.977 18.174 17.112 17.568 17.352 16.892C17.592 16.216 17.592 15.646 17.532 15.536C17.472 15.426 17.232 15.366 16.872 15.186H17.472V14.382ZM12.005 21.676C10.237 21.676 8.601 21.2 7.185 20.36L6.875 20.17L3 21.4L4.25 17.74L4.04 17.41C3.12 15.94 2.63 14.25 2.63 12.51C2.63 7.35 6.83 3.15 12.01 3.15C14.51 3.15 16.86 4.12 18.63 5.89C20.4 7.66 21.37 10.01 21.37 12.51C21.37 17.67 17.17 21.87 12.005 21.676Z" />
+    </svg>
+  </button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="./js/main.js"></script>
+  <script type="module" src="./js/animations.js"></script>
+  <script src="./js/whatsapp.js"></script>
+</body>
+
+</html>
